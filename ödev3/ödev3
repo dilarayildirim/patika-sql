@@ -1,0 +1,30 @@
+Country names starting with 'A' and ending with 'a':
+
+sql
+Kodu kopyala
+SELECT country 
+FROM country 
+WHERE country LIKE 'A%a';
+Country names with at least 6 characters and ending with 'n':
+
+sql
+Kodu kopyala
+SELECT country 
+FROM country 
+WHERE LENGTH(country) >= 6 AND country LIKE '%n';
+Film titles containing at least 4 'T' characters (case insensitive):
+
+sql
+Kodu kopyala
+SELECT title 
+FROM film 
+WHERE LOWER(title) LIKE '%t%' 
+GROUP BY title 
+HAVING LENGTH(title) - LENGTH(REPLACE(LOWER(title), 't', '')) >= 4;
+Films starting with 'C', length greater than 90, and rental rate equal to 2.99:
+
+sql
+Kodu kopyala
+SELECT * 
+FROM film 
+WHERE title LIKE 'C%' AND length > 90 AND rental_rate = 2.99;
