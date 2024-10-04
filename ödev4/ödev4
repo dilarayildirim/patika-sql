@@ -1,0 +1,34 @@
+Distinct values from the replacement_cost column in the film table:
+
+sql
+
+SELECT DISTINCT replacement_cost 
+FROM film 
+ORDER BY replacement_cost;
+Count of distinct values in the replacement_cost column:
+
+sql
+
+SELECT COUNT(DISTINCT replacement_cost) AS distinct_count 
+FROM film;
+Count of films whose titles start with 'T' and rating equals 'G':
+
+sql
+
+SELECT COUNT(*) AS count 
+FROM film 
+WHERE title LIKE 'T%' AND rating = 'G';
+Count of country names with exactly 5 characters:
+
+sql
+
+SELECT COUNT(*) AS count 
+FROM country 
+WHERE LENGTH(country) = 5;
+Count of city names that end with 'R' or 'r':
+
+sql
+
+SELECT COUNT(*) AS count 
+FROM city 
+WHERE city LIKE '%R' OR city LIKE '%r';
